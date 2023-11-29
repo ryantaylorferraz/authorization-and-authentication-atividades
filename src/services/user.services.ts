@@ -1,6 +1,6 @@
 import { injectable } from "tsyringe";
 import {
-    TLoginReturn,
+   TLoginReturn,
    TUserLoginBody,
    TUserRegisterBody,
    TUserReturn,
@@ -45,14 +45,14 @@ export class UserServices {
       });
 
       return {
-        accessToken: token,
-        user: userReturnSchema.parse(user)
-      }
+         accessToken: token,
+         user: userReturnSchema.parse(user),
+      };
    }
 
-   async getUser(id: number): Promise<TUserReturn>{
-    const user = await prisma.user.findFirst({ where: { id }});
+   async getUser(id: number): Promise<TUserReturn> {
+      const user = await prisma.user.findFirst({ where: { id } });
 
-    return userReturnSchema.parse(user)
+      return userReturnSchema.parse(user);
    }
 }
