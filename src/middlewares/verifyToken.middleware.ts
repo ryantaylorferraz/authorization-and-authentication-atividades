@@ -12,7 +12,7 @@ export class verifyToken {
 
     const token = authorization?.replace("Bearer ", "");
 
-    jwt.verify(token, process.env.JWT_SECRET as string);
+    jwt.verify(token, process.env.JWT_SECRETT as string);
 
     res.locals.decode = jwt.decode(token);
 

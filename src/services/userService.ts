@@ -42,8 +42,8 @@ export class UserService {
       throw new AppError("Email and Password doesn't match.", 403);
     }
 
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string, {
-      expiresIn: process.env.EXPIRE_TOKEN,
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRETT as string, {
+      expiresIn: process.env.EXPIRES_IN,
     });
 
     return {
